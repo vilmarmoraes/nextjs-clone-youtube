@@ -1,20 +1,13 @@
-import * as React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Link from '../Link';
+import { Button } from "@material-ui/core";
+import React from "react";
 
-export default function Index() {
+export default function Home() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-      </Box>
-    </Container>
+      <div>
+            {/*outlined ticar a cor de fundo*/}
+          <Button variant="outlined" color="secondary">
+              Primary
+            </Button>
+      </div>
   );
 }
