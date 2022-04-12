@@ -1,7 +1,8 @@
 import { makeStyles } from '@mui/styles';
 import { ThemeProvider } from "@mui/material/styles";
 import Head from 'next/head';
-import TopBar from './Topbar';
+import TopBar from './TopBar';
+import NavBar from './NavBar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,7 +46,7 @@ function Layout({children, title}){
             <div className={classes.root}>
                 <h1>Layout</h1>
                 <TopBar />
-                <div>navbar</div>
+                <NavBar />
                 <div className={classes.wrapper}>
                     <div className={classes.contentContainer}>
                         <div className={classes.content}>
