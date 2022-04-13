@@ -1,7 +1,9 @@
 import { makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import theme from '../../theme';
+import { Box, IconButton, InputBase, Paper } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -37,8 +39,28 @@ export default function TopBar() {
 
     return(
         <AppBar className={classes.root} color="default">
-            <Toolbar>
-                AppBar
+            <Toolbar className={classes.toolbar}>
+                <Box display='flex' alignItems='center'>
+                    <MenuIcon />
+                    <img 
+                        src='/new-youtube-logo.svg' 
+                        alt='logo' 
+                        className={classes.logo}
+                    />
+                </Box>
+                <Box>
+                    <Paper component="form" className={classes.search}>
+                        <InputBase
+                            className={classes.input}
+                            placeholder="Pesquisar"
+                            inputProps={{ 'aria-label': 'search google maps' }}
+                        />
+                        <IconButton type="submit" arial-label="search">
+                            <SearchIcon />
+                        </IconButton>
+                    </Paper>
+                </Box>
+                <Box>teste3</Box>
             </Toolbar>
         </AppBar>
     )

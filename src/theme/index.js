@@ -6,6 +6,7 @@ import { colors } from '@mui/material';
 const theme = createTheme({
     palette: {
         /* mode: "dark", */
+        boxShadow: 'none',
         primary: {
           main: '#f44336',
         },
