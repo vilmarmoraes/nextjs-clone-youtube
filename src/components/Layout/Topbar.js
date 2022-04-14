@@ -1,9 +1,10 @@
 import { makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { Box, IconButton, InputBase, Paper } from '@mui/material';
+import { Box, Button, Hidden, IconButton, InputBase, Paper } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { AccountCircle, Apps, MoreVert, VideoCall } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     toolbar: {
       minHeight: 56,
       display: 'flex',
-      alignItems: 'center',
       justifyContent: 'space-between',
+      alignItems: 'center',
     },
     logo: {
       cursor: 'pointer',
@@ -48,19 +49,39 @@ export default function TopBar() {
                         className={classes.logo}
                     />
                 </Box>
+                <Hidden>
+                    <Box>
+                        <Paper component="form" className={classes.search}>
+                            <InputBase
+                                className={classes.input}
+                                placeholder="Pesquisar"
+                                inputProps={{ 'aria-label': 'search google maps' }}
+                            />
+                            <IconButton type="submit" arial-label="search">
+                                <SearchIcon />
+                            </IconButton>
+                        </Paper>
+                    </Box>
+                </Hidden>
                 <Box>
-                    <Paper component="form" className={classes.search}>
-                        <InputBase
-                            className={classes.input}
-                            placeholder="Pesquisar"
-                            inputProps={{ 'aria-label': 'search google maps' }}
-                        />
-                        <IconButton type="submit" arial-label="search">
-                            <SearchIcon />
-                        </IconButton>
-                    </Paper>
+                    <IconButton className={classes.icons}>
+                        <VideoCall />
+                    </IconButton>
+                    <IconButton className={classes.icons}> 
+                        <Apps />
+                    </IconButton>
+                    <IconButton className={classes.icons}>
+                        <MoreVert />
+                    </IconButton>
+                    <Button 
+                        color="secondary"
+                        component="a"
+                        variant="outlined"
+                        startIcon={<AccountCircle />}
+                    >
+                        Fazer Login
+                    </Button>
                 </Box>
-                <Box>teste3</Box>
             </Toolbar>
         </AppBar>
     )

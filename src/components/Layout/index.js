@@ -37,27 +37,26 @@ function Layout({children, title}){
     const classes = useStyles()
     return(
         <>
-        <Head>
-            <title>{title}</title>
-            <meta charSet='utf-8' />
-            <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-        </Head>
-        <ThemeProvider>
-            <div className={classes.root}>
-                <h1>Layout</h1>
-                <TopBar />
-                <NavBar />
-                <div className={classes.wrapper}>
-                    <div className={classes.contentContainer}>
-                        <div className={classes.content}>
-                            {children}
+            <Head>
+                <title>{title}</title>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+            <ThemeProvider>
+                <div className={classes.root}>
+                    <TopBar />
+                   {/*  <NavBar /> */}
+                    <div className={classes.wrapper}>
+                        <div className={classes.contentContainer}>
+                            <div className={classes.content}>
+                                {children}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </ThemeProvider>
+            </ThemeProvider>
         </>
-    )
+    );
 }
 
-export default Layout
+export default Layout;
