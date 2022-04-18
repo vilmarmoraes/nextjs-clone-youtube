@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
-import { ThemeProvider } from "@mui/material/styles";
 import Head from 'next/head';
+
+
 import TopBar from './TopBar';
 import NavBar from './NavBar';
 
@@ -33,7 +34,8 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function Layout({children, title}){
+  
+  function Layout({children, title}){
     const classes = useStyles()
     return(
         <>
@@ -42,19 +44,17 @@ function Layout({children, title}){
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-            <ThemeProvider>
-                <div className={classes.root}>
-                    <TopBar />
-                   {/*  <NavBar /> */}
-                    <div className={classes.wrapper}>
-                        <div className={classes.contentContainer}>
-                            <div className={classes.content}>
-                                {children}
-                            </div>
+            <div className={classes.root}>
+                <TopBar />
+                <NavBar />
+                <div className={classes.wrapper}>
+                    <div className={classes.contentContainer}>
+                        <div className={classes.content}>
+                            {children}
                         </div>
                     </div>
                 </div>
-            </ThemeProvider>
+            </div>
         </>
     );
 }

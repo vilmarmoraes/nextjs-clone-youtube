@@ -1,22 +1,23 @@
 import { makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { Box, Button, Hidden, IconButton, InputBase, Paper } from '@mui/material';
+import { Box, Button, createTheme, Hidden, IconButton, InputBase, Paper } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { AccountCircle, Apps, MoreVert, VideoCall } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        boxShadow: 'none',
+        boxShadow:'none',
         zIndex: theme.zIndex.drawer + 1,
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: theme.palette.background.default
     },
     toolbar: {
-      minHeight: 56,
+      minHeight: 100,
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
+      backgroundColor: "blue"
     },
     logo: {
       cursor: 'pointer',
@@ -39,7 +40,7 @@ export default function TopBar() {
     const classes = useStyles();
 
     return(
-        <AppBar className={classes.root} color="default">
+        <AppBar className={classes.root} color="default" bgcolor="blue">
             <Toolbar className={classes.toolbar}>
                 <Box display='flex' alignItems='center'>
                     <MenuIcon />
@@ -49,7 +50,7 @@ export default function TopBar() {
                         className={classes.logo}
                     />
                 </Box>
-                <Hidden>
+                <Hidden mdDown>
                     <Box>
                         <Paper component="form" className={classes.search}>
                             <InputBase
@@ -63,7 +64,7 @@ export default function TopBar() {
                         </Paper>
                     </Box>
                 </Hidden>
-                <Box>
+                <Box display="flex">
                     <IconButton className={classes.icons}>
                         <VideoCall />
                     </IconButton>

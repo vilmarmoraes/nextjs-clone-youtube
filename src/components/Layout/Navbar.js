@@ -1,9 +1,24 @@
 import { useRouter } from 'next/router';
-import { Hidden, Drawer, Box, List, ListItem,
-    ListItemIcon, ListItemText, ListSubheader,
-    Avatar, Divider, Typography, Button } from '@mui/material';
+import { 
+    Hidden, 
+    Drawer, 
+    Box, 
+    List, 
+    ListItem,
+    ListItemIcon, 
+    ListItemText, 
+    ListSubheader,
+    Avatar, 
+    Divider, 
+    Typography, 
+    Button} from '@mui/material';
 import { makeStyles } from '@mui/styles';
-import { History, Subscriptions, VideoLibrary, Whatshot } from '@mui/icons-material';
+import { 
+    AccountCircle,
+    History, 
+    Subscriptions, 
+    VideoLibrary, 
+    Whatshot } from '@mui/icons-material';
 import HomeIcon from '@mui/icons-material/Home';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
   ];
   
-  const secondaryManu = [
+  const secondaryMenu = [
     { id: 1, label: 'Biblioteca', icon: VideoLibrary },
     { id: 2, label: 'Histórico', icon: History },
   ];
@@ -54,7 +69,7 @@ export default function NavBar(){
     const isSelected = (item) => router.pathname === item.path;
 
     const content = (
-        <Box height="100%" display="flex" flexDirection="column">
+        <Box height="100%" display="flex" flexDirection="column" bgcolor="yellow">
             <List>          
                 {primaryMenu.map((item) => {
                 const Icon = item.icon;
@@ -80,7 +95,7 @@ export default function NavBar(){
             </List>
             <Divider />
             <List>
-                {secondaryManu.map((item) => {
+                {secondaryMenu.map((item) => {
                 const Icon = item.icon;
                 return (
                     <ListItem
@@ -102,6 +117,20 @@ export default function NavBar(){
                 );
                 })}
             </List>
+            <Divider />
+            <Box mx={4} my={2}>
+                <Typography variant='body2'>
+                    Faça login para curtir os videos, comentar e se inscrever.
+                </Typography>             
+                <Box mt={2}>
+                    <Button 
+                    variant='outlined'
+                    color='secondary'
+                    startIcon={<AccountCircle />}>
+                        Fazer login
+                    </Button>
+                </Box>   
+            </Box>
         </Box>
     )
 

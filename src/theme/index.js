@@ -5,8 +5,6 @@ import { colors } from '@mui/material';
 // Create a theme instance.
 const theme = createTheme({
     palette: {
-        /* mode: "dark", */
-        boxShadow: 'none',
         primary: {
           main: '#f44336',
         },
