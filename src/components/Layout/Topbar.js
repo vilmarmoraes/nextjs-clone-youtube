@@ -15,9 +15,8 @@ const useStyles = makeStyles((theme) => ({
     toolbar: {
       minHeight: 100,
       display: 'flex',
-      justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: "blue"
+      justifyContent: 'space-between',
     },
     logo: {
       cursor: 'pointer',

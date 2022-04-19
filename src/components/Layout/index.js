@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flex: '1 1 auto',
       overflow: 'hidden',
+    //   backgroundColor: 'greenyellow',
       paddingTop: 64,
       [theme.breakpoints.up('lg')]: {
         paddingLeft: 256,
@@ -26,10 +27,14 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flex: '1 1 auto',
       overflow: 'hidden',
+    //   backgroundColor: 'red',
+    //   padding: 20,
     },
     content: {
       flex: '1 1 auto',
       height: '100%',
+    //   backgroundColor: 'magenta',
+    //   padding: 20,
       overflow: 'auto',
     },
   }));

@@ -69,7 +69,7 @@ export default function NavBar(){
     const isSelected = (item) => router.pathname === item.path;
 
     const content = (
-        <Box height="100%" display="flex" flexDirection="column" bgcolor="yellow">
+        <Box height="100%" display="flex" flexDirection="column">
             <List>          
                 {primaryMenu.map((item) => {
                 const Icon = item.icon;
